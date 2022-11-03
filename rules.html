@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game Rules</title>
+    <style>
+        /* costome font family 1 */
+        @font-face {
+            font-family: customefont;
+            src: url(Warden.otf);
+        }
+
+
+        /* costome font family 2 */
+        @font-face {
+            font-family: customefont2;
+            src: url(Grind_Demolished.ttf);
+        }
+
+        body {
+            text-align: center;
+            font-family: 'customefont';
+        }
+
+        section {
+            width: 75%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-top: 20px;
+            color: #33f11b;
+        }
+
+        p {
+            color: black;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            text-align: left;
+            font-size: 1.4rem;
+            list-style: none;
+        }
+
+        ul li::before {
+            content: "\2022";
+            /* Add content: \2022 is the CSS Code/unicode for a bullet */
+            color: rgb(13, 0, 0);
+            /* Change the color */
+            font-weight: bold;
+            /* If you want it to be bold */
+            display: inline-block;
+            /* Needed to add space between the bullet and the text */
+            width: 1em;
+            /* Also needed for space (tweak if needed) */
+            margin-left: -1em;
+        }
+
+        #image {
+            text-align: center;
+            color: #fffa00;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+
+        }
+
+        img {
+            width: 450px;
+            margin-top: 10px;
+            border-radius: 10px
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            /* font-family: 'Exo', sans-serif; */
+            color: white;
+        }
+
+
+        .context {
+            width: 100%;
+            position: absolute;
+            /* top: 50vh; */
+
+        }
+
+
+        .area {
+            background: #4e54c8;
+            background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+            width: 100%;
+            height: 150vh;
+        }
+
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        a {
+            background-image: linear-gradient(to right,
+                    #f6a9a9,
+                    #b26cf8 50%,
+                    transparent 50%);
+            background-size: 200% 100%;
+            background-position: -100%;
+            display: inline-block;
+            padding: 5px 5px;
+            position: relative;
+            /* -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent; */
+            transition: all 0.3s ease-in-out;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: 'Cutive Mono', monospace;
+            color: #7aff00;
+            bottom: -8px;
+            border-radius: 10px;
+            font-weight: bolder;
+        }
+
+
+        a:before {
+            content: '';
+            background: #54b3d6;
+            display: block;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-position: 0;
+        }
+
+        a:hover::before {
+            width: 100%;
+        }
+
+
+        @keyframes animate {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+
+        }
+
+        @media(max-width:900px) {
+            .area {
+                height: 200vh;
+            }
+        }
+
+        @media(max-width:600px) {
+            img {
+                width: 350px;
+            }
+
+            ul {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media(max-width:530px) {
+            section {
+                width: 80%;
+            }
+
+            img {
+                width: 90%;
+            }
+
+            ul {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 2.35rem;
+            }
+
+            #image {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media(max-width:340px) {
+            .area {
+                height: 240vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="context">
+        <section>
+            <h1>How to Play</h1>
+            <p>Single Player</p>
+            <ul>
+                <li>First You have to click on the start button to start the game.</li>
+                <li>Then You will see 1 image/box will pop up, You have to remember that image/box and then you have
+                    click
+                    on that image.</li>
+                <div id="image">
+                    <img src="photos/rule1.png" alt="">
+                    <h3>As you can see a single image was pop up, You have click on that image</h3>
+                </div>
+                <li>Then You will be promoted to the Level 2 and you will see the same image will pop up once again and
+                    just
+                    after that one another image will pop Up, You have to remember that images/boxes and then you have
+                    click/tap on that images.</li>
+                <li>Similarly every time the game will add an Extra image/box to the sequence and You have to remember
+                    that
+                    images/boxes and then you have click/tap on that images sequencely.</li>
+                <li>If you click/tap on the incorrect image/box then the game will atomatically stops and You will lose
+                    the
+                    game.</li>
+                <li>And, If you want to Retry the game then you can simply click on start button to restart the again.
+                </li>
+                <li>If you clear every level up to 10 then you will get a Grand Victory that means the game will ends
+                    and
+                    you won the game.</li>
+            </ul>
+
+            <a href="index.html">Back to the game</a>
+        </section>
+    </div>
+
+
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

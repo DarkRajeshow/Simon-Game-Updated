@@ -1,0 +1,346 @@
+/* costome font family 1 */
+@font-face {
+    font-family: customefont;
+    src: url(Warden.otf);
+}
+
+
+/* costome font family 2 */
+@font-face {
+    font-family: customefont2;
+    src: url(Grind_Demolished.ttf);
+}
+
+/* body elements*/
+body {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-image: url(photos/wallpaper3.jpg);
+    background-position: center;
+    text-align: center;
+    margin: 0%;
+}
+
+h1 {
+    font-family: 'customefont2', monospace;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: -20px;
+}
+
+p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00ff00;
+    transition: 0.5s;
+}
+
+/* all box elements */
+div>span {
+    width: 180px;
+    height: 180px;
+    border: 14px solid #3d423e;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-family: 'Azeret Mono', monospace;
+    justify-content: center;
+    color: transparent;
+    cursor: pointer;
+}
+
+/* all box element section */
+.div {
+    margin-top: 100px;
+    height: 300px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* box1 */
+.yellow {
+    background-image: url(photos/aot.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* box2 */
+.blue {
+    background-image: url(photos/deathNote.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* box3 */
+.green {
+    background-image: url(photos/ds4.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* box4 */
+.red {
+    background-image: url(photos/opm7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* custom click hover effect 1*/
+.hover {
+    box-shadow: 0 0 25px 0 gray;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* custom click hover effect 2*/
+.hover2 {
+    box-shadow: 0 0 25px 0 gray;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/* score/ Level */
+.score {
+    font-size: 2rem;
+    /* margin-top: -30px; */
+    font-family: 'Cutive Mono', monospace;
+    color: #ffa800;
+    font-weight: bolder;
+}
+
+/* start button */
+button {
+    padding: 5px 40px;
+    margin: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+button:hover {
+    box-shadow: 0 0 18px 0 black;
+    transition: 0.5s;
+}
+
+/* font awesome icon style */
+i {
+    color: orange;
+}
+
+/* wrong answer click hover effect */
+.wrongHover {
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+
+a {
+    background-image: linear-gradient(to right,
+            #54b3d6,
+            #4006ff 50%,
+            transparent 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 5px;
+    position: relative;
+    /* -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent; */
+    transition: all 0.3s ease-in-out;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: 'Cutive Mono', monospace;
+    color: #7aff00;
+    bottom: -8px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+
+a:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    background-position: 0;
+}
+
+a:hover::before {
+    width: 100%;
+}
+
+/* Presentational Styles */
+body {
+    display: grid;
+    font-family: 'Poppins', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    height: 100vh;
+    place-items: center;
+}
+
+/* this is the shake wrong animatin effect */
+@keyframes shake {
+    0% {
+        margin-left: 0rem;
+    }
+
+    25% {
+        margin-left: 1rem;
+    }
+
+    75% {
+        margin-left: -1rem;
+    }
+
+    100% {
+        margin-left: 0rem;
+    }
+}
+
+footer {
+    font-size: 1.4rem;
+    font-family: 'Cutive Mono', monospace;
+    background: black;
+    font-weight: bolder;
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+}
+
+/* now meadia quary's section has come */
+/* section 1 : screen size <= 970px */
+@media (max-width:970px) {
+    .div {
+        display: grid;
+        grid-template-columns: auto auto;
+        height: 430px;
+    }
+
+    footer {
+        font-size: 1.3rem;
+    }
+
+    .div>span {
+        margin-bottom: 0;
+        margin: -20px 0;
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    button {
+        margin: 0;
+    }
+}
+
+@media(max-width:600px) {
+    footer {
+        font-size: 1rem;
+        width: 350px;
+    }
+}
+
+/* section 1 : screen size <= 460px */
+@media (max-width:460px) {
+    .div>span {
+        border: 10px solid #3d423e;
+    }
+
+    footer {
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+/* section 1 : screen size <= 395px */
+@media (max-width:395px) {
+    .div>span {
+        width: 120px;
+        height: 120px;
+        border: 7px solid gray;
+    }
+
+    footer {
+        width: 250px;
+    }
+
+    .div {
+        gap: 20px;
+        margin: 50px 0;
+        height: 320px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width:300px){
+    .div>span {
+        width: 110px;
+        height: 110px;
+        border: 7px solid gray;
+    }
+
+    footer {
+        width: 250px;
+    }
+
+    .div {
+        gap: 20px;
+        margin: 50px 0;
+        height: 320px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+
+        font-size: 1.2rem;
+    }
+}
+
+/* :: -----------------------------------JaVaScript--------------------------------------- ::
+   :: ---------------------------------------EnD------------------------------------------ :: */

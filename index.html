@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon game</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- game name -->
+    <h1>!! SIMON GAME !!</h1> 
+
+    <!-- instructions and appriciations -->
+    <p>Click Start To Play <i class="fa-solid fa-arrow-down"></i></p>
+
+    <!-- start button -->
+    <button>START</button>
+
+    <!-- container -->
+    <div class="div">
+        <!-- boxes -->
+        <span class="red" onmouseout="mouseoutimg()">0</span>
+        <span class="blue" onmouseout="mouseoutimg()">1</span>
+        <span class="yellow" onmouseout="mouseoutimg()">2</span>
+        <span class="green" onmouseout="mouseoutimg()">3</span>
+    </div>
+
+    <!-- score board -->
+    <div class="score">SCORE : 0</div>
+    
+    <a href="rules.html" target="_blank">Game Rules</a><br>
+    <footer>
+        <div>Made With Heart <i class="fa-solid fa-heart" style="color:red"></i> copyright<i class="fa-regular fa-copyright" style="color:white"></i></i> Rajesh Adeli</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
